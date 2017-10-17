@@ -1,24 +1,26 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
-  <h1>
+  <h1 class="welcome">
     Welcome to {{ title }}!
   </h1>
 </div>
-<div>
+<div class="col-xs-4 col-xs-offset-7">
   <label for="Subject"></label>
-  <input name="subject" type="text" [(ngModel)]="query">
-  <button (click)="searchPosts()">Submit</button>
+  <input name="subject" type="text" [(ngModel)]="query" (keydown.Enter)="searchPosts()">
+  <button class="btn btn-success text-uppercase" (click)="searchPosts()" >Search</button>
 </div>
-<div>
-  <ul>
-    <li *ngFor="let post of postList">
-      <a href="{{ post.data.url }}">
-        {{ post.data.title }}
-        <img src="{{post.data.thumbnail}}" alt="">
-      </a>
-      {{ post.data.author }}
-      Ups!!!!!!!: {{ post.data.ups }}
-      {{ post.data.created | date }}
-    </li>
-  </ul>
+<div class="row">
+  <div class="col-xs-9 col-xs-offset-1">
+    <ul class="search-list">
+      <li class="list-item" *ngFor="let post of postList">
+        <a href="{{ post.data.url }}" target="_blank" class="reddit-link">
+          {{ post.data.title }}
+          <img class="search-img" src="{{post.data.thumbnail}}" alt="">
+        </a>
+        <p>{{ post.data.author }}</p>
+        <p>Ups!!!!!!!: {{ post.data.ups }}</p>
+        <p>{{ post.data.created | date }}</p>
+      </li>
+    </ul>
+  </div>
 </div>

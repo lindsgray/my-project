@@ -1,0 +1,42 @@
+.welcome {
+    font-family: 'Permanent Marker', cursive;
+    color: #42f498;
+    text-shadow: 2px 2px black;
+    font-size: 100px;
+}
+
+.search-list {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-top: 50px;
+}
+
+.list-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 150px;
+}
+
+a:link {
+    color: black;
+}
+
+a:visited {
+     color: #42f498;
+}
+
+.reddit-link {
+
+}
+
+.list-item img {
+    border: 2px solid #42f498;
+    margin: 50px 0;
+}
